@@ -1,14 +1,16 @@
 package com.michelet.common.auth.core.context;
 
+import com.michelet.common.auth.core.enums.UserRole;
+
 public record UserContext(
         String userId,
-        String role
+        UserRole role
 ) {
-    public boolean hasRole(String expectedRole){
-        return role != null && role.equals(expectedRole);
+    public boolean hasRole(UserRole expectedRole) {
+        return role != null && role == expectedRole;
     }
 
-    public boolean isAuthenticated(){
+    public boolean isAuthenticated() {
         return userId != null && !userId.isBlank();
     }
 }
