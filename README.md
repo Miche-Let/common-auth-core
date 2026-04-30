@@ -1,1 +1,1 @@
-# common-auth
+# common-auth-core
